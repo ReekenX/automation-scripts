@@ -4,6 +4,23 @@ This repository contains my random automation scripts for various tasks and util
 
 ## Scripts
 
+### Text to Voice
+
+A simple ElevenLabs CLI script that converts text to speech and plays it. By default, it says "Task finished successfully" but you can provide a custom message.
+
+**How to run:**
+```bash
+# Default message
+uv run uv-scripts/text-to-voice.py
+
+# Custom message
+uv run uv-scripts/text-to-voice.py "Your custom text here"
+```
+
+**Requirements:**
+- ElevenLabs API key set as environment variable: `ELEVENLABS_API_KEY`
+- ffplay (comes with ffmpeg) for audio playback
+
 ### Weekly Coding Stats
 
 This script tracks the number of lines of code written per week, showing weekly average and totals.
