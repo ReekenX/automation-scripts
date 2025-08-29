@@ -168,8 +168,10 @@ def main():
             table.add_row([f"2025 W{week_num}", formatted_lines])
             total_lines += lines
         
-        # Calculate average
-        avg_lines = total_lines // len(sorted_weeks) if sorted_weeks else 0
+        # Calculate average (excluding last week)
+        weeks_for_avg = sorted_weeks[:-1] if len(sorted_weeks) > 1 else sorted_weeks
+        total_for_avg = sum(lines for _, lines in weeks_for_avg)
+        avg_lines = total_for_avg // len(weeks_for_avg) if weeks_for_avg else 0
         
         # Add separator row and totals
         table.add_row(['─' * 10, '─' * 15])
